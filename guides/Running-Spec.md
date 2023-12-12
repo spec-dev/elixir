@@ -14,7 +14,9 @@ The following command will:
 
 1. Run Spec alongside a local Postgres database named `spec`
 2. Add the Live Tables for this project ([outlined here](./.spec/project.toml)) to your Postgres schema
-3. Kick off backfills for every Live Table on first startup
+3. Backfill every Live Table on first startup
+4. Subscribe to events to keep your tables up-to-date with new activity on-chain
+5. Subscribe to reorgs across all chains your tables depend on
 
 ```bash
 $ spec start
