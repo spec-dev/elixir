@@ -4,7 +4,7 @@ Contract Groups and Live Tables for the [Elixir Protocol](https://elixir.finance
 
 **The Elixir Namespace:** https://spec.dev/elixir  🚀
 
-![elixir](https://github.com/spec-dev/elixir/assets/6496306/ec76dc5c-b347-4928-ada1-8deb7820e8ef)
+![elixir](https://github.com/spec-dev/elixir/assets/6496306/44418143-4a07-4437-b956-f1e096510624)
 
 # Preview
 
