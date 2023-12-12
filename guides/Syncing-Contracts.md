@@ -22,6 +22,8 @@ To sync your contracts to your namespace, run the following command *from the ro
 $ spec sync contracts
 ```
 
+https://github.com/spec-dev/elixir/assets/6496306/5e9b4c7a-c8a2-458a-9afc-288fc2834b8f
+
 All of the events in your multi-chain deployments will then be:
 1. Decoded
 2. Enriched with transaction/block/chain-level data
