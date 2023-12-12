@@ -1,0 +1,14 @@
+{
+  "namespace": "elixir",
+  "groups": [
+    {
+      "name": "VertexManager",
+      "contracts": [
+        {
+          "chainId": 42161,
+          "address": "0x052ab3fd33cadf9d9f227254252da3f996431f75"
+        }
+      ]
+    }
+  ]
+}

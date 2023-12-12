@@ -1,0 +1,104 @@
+# = Data Sources -----------------------------
+
+[objects.Deposit]
+id = 'elixir.Deposit@0.0.1'
+
+[objects.Queued]
+id = 'elixir.Queued@0.0.1'
+
+[objects.Claim]
+id = 'elixir.VertexManager.Claim@0x70eb43c4a8ae8c40502dcf22436c509c28d6ff421cf07c491be56984bd987068'
+
+[objects.Transaction]
+id = 'arbitrum.Transaction@0.0.1'
+
+# = Live Tables ------------------------------
+
+[tables.public.deposit]
+router = 'Deposit.router'
+caller = 'Deposit.caller'
+receiver = 'Deposit.receiver'
+id = 'Deposit.id'
+token = 'Deposit.token'
+amount = 'Deposit.amount'
+shares = 'Deposit.shares'
+contract_address = 'Deposit.contractAddress'
+transaction_hash = 'Deposit.transactionHash'
+log_index = 'Deposit.logIndex'
+block_hash = 'Deposit.blockHash'
+block_number = 'Deposit.blockNumber'
+block_timestamp = 'Deposit.blockTimestamp'
+chain_id = 'Deposit.chainId'
+
+[tables.public.queued]
+spot = 'Queued.spot'
+queue_count = 'Queued.queueCount'
+queue_up_to = 'Queued.queueUpTo'
+contract_address = 'Queued.contractAddress'
+transaction_hash = 'Queued.transactionHash'
+log_index = 'Queued.logIndex'
+block_hash = 'Queued.blockHash'
+block_number = 'Queued.blockNumber'
+block_timestamp = 'Queued.blockTimestamp'
+chain_id = 'Queued.chainId'
+
+[tables.public.claim_event]
+user = 'Claim.user'
+token = 'Claim.token'
+amount = 'Claim.amount'
+contract_name = 'Claim.contractName'
+contract_address = 'Claim.contractAddress'
+transaction_hash = 'Claim.transactionHash'
+log_index = 'Claim.logIndex'
+block_hash = 'Claim.blockHash'
+block_number = 'Claim.blockNumber'
+block_timestamp = 'Claim.blockTimestamp'
+chain_id = 'Claim.chainId'
+
+[tables.public.transaction]
+hash = 'Transaction.hash'
+nonce = 'Transaction.nonce'
+transaction_index = 'Transaction.transactionIndex'
+from = 'Transaction.from'
+to = 'Transaction.to'
+contract_address = 'Transaction.contractAddress'
+value = 'Transaction.value'
+input = 'Transaction.input'
+function_name = 'Transaction.functionName'
+function_args = 'Transaction.functionArgs'
+transaction_type = 'Transaction.transactionType'
+status = 'Transaction.status'
+root = 'Transaction.root'
+gas = 'Transaction.gas'
+gas_price = 'Transaction.gasPrice'
+max_fee_per_gas = 'Transaction.maxFeePerGas'
+max_priority_fee_per_gas = 'Transaction.maxPriorityFeePerGas'
+gas_used = 'Transaction.gasUsed'
+cumulative_gas_used = 'Transaction.cumulativeGasUsed'
+effective_gas_price = 'Transaction.effectiveGasPrice'
+block_hash = 'Transaction.blockHash'
+block_number = 'Transaction.blockNumber'
+block_timestamp = 'Transaction.blockTimestamp'
+chain_id = 'Transaction.chainId'
+
+# = Links & Filters --------------------------
+
+[[objects.Deposit.links]]
+table = 'public.deposit'
+uniqueBy = [ 'transactionHash', 'logIndex', 'chainId' ]
+
+[[objects.Queued.links]]
+table = 'public.queued'
+uniqueBy = [ 'transactionHash', 'logIndex', 'chainId' ]
+
+[[objects.Claim.links]]
+table = 'public.claim_event'
+uniqueBy = [ 'transactionHash', 'logIndex', 'chainId' ]
+
+[[objects.Transaction.links]]
+table = 'public.transaction'
+uniqueBy = [ 'hash', 'chainId' ]
+filterBy = [
+	{ to = { op = '=', value = '0x052ab3fd33cadf9d9f227254252da3f996431f75' } },
+	{ from = { op = '=', value = '0x052ab3fd33cadf9d9f227254252da3f996431f75' } },
+]

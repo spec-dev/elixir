@@ -1,0 +1,7 @@
+{
+    "namespace": "elixir",
+    "name": "Deposit",
+    "version": "0.0.1",
+    "displayName": "Deposit",
+    "description": "All deposit events from the Elixir vertex manager."
+}

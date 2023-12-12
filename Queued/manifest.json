@@ -1,0 +1,7 @@
+{
+    "namespace": "elixir",
+    "name": "Queued",
+    "version": "0.0.1",
+    "displayName": "Queued",
+    "description": "All queued events from the Elixir vertex manager."
+}
