@@ -4,7 +4,7 @@ Add Elixir's Live Tables to your own Postgres schema and run them locally.
 
 ## Prerequisites
 
-⚒️ [Get set up with Spec](./guides/Spec-Setup.md)
+⚒️ [Get set up with Spec](./Spec-Setup.md)
 
 ## Start Spec
 
